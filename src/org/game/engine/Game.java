@@ -83,7 +83,7 @@ public abstract class Game implements KeyListener, MouseMotionListener, MouseLis
 
     abstract public void update();
 
-    abstract public void init();
+    public void init(){};
 
     boolean isOver() {
         return over;
