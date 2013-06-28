@@ -5,21 +5,25 @@
 package org.game.engine;
 
 import java.awt.Graphics;
+import java.awt.event.ComponentEvent;
+import java.awt.event.ComponentListener;
 import javax.swing.JComponent;
 
 /**
  *
  * @author VladimirO
  */
-class GameCanvas extends JComponent{
-    private final Game game;
+class GameCanvas extends JComponent implements ComponentListener{
 
-    public GameCanvas(Game game) {
+    private Game game;
+
+    public GameCanvas(/*Game game*/) {
         this.game = game;
         addKeyListener(this.game);
         addMouseListener(this.game);
         addMouseMotionListener(this.game);
         requestFocus();
+        addComponentListener(this);
     }
 
     @Override
@@ -27,5 +31,27 @@ class GameCanvas extends JComponent{
         //super.paintComponent(g);
         game.draw(g);
     }
-    
+
+    void setGame(Game game) {
+        this.game = game;
+        addKeyListener(game);
+        addMouseListener(game);
+        addMouseMotionListener(game);
+        requestFocus();
+        addComponentListener(this);
+    }
+
+    @Override
+    public void componentResized(ComponentEvent ce) {
+        game.resize(ce.getComponent().getWidth(), ce.getComponent().getHeight());
+    }
+
+    @Override
+    public void componentMoved(ComponentEvent e) {}
+
+    @Override
+    public void componentShown(ComponentEvent e) {}
+
+    @Override
+    public void componentHidden(ComponentEvent e) {}
 }

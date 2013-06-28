@@ -88,4 +88,6 @@ public abstract class Game implements KeyListener, MouseMotionListener, MouseLis
     boolean isOver() {
         return over;
     }
+
+    void resize(int width, int height) {}
 }
