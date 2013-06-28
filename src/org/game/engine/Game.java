@@ -15,7 +15,7 @@ import java.awt.event.MouseMotionListener;
  *
  * @author VladimirO
  */
-abstract class Game implements KeyListener, MouseMotionListener, MouseListener {
+public abstract class Game implements KeyListener, MouseMotionListener, MouseListener {
 
     protected boolean over;
     protected long delay;
@@ -83,7 +83,7 @@ abstract class Game implements KeyListener, MouseMotionListener, MouseListener {
 
     abstract public void update();
 
-    abstract void init();
+    abstract public void init();
 
     boolean isOver() {
         return over;
