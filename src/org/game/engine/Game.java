@@ -18,7 +18,7 @@ import java.awt.event.MouseMotionListener;
 public abstract class Game implements KeyListener, MouseMotionListener, MouseListener {
 
     protected boolean over;
-    protected long delay;
+    protected int delay = 30;
     protected int width = 400;
     protected int height = 300;
     protected String title = "My Game";
