@@ -22,7 +22,7 @@ public class GameApplication {
 				JFrame frame = new JFrame(game.getTitle());
 				//frame.setSize(game.getWidth(), game.getHeight());
                                 frame.setBounds(new Rectangle(game.getWidth()+14, 
-                                        game.getHeight()+29));//This need for my computer.
+                                        game.getHeight()+30));//This need for my computer.
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				GameCanvas canvas = new GameCanvas();
 				canvas.setGame(game);
